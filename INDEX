@@ -1,0 +1,12 @@
+		FUNCTIONS
+HurstK			Hurst K Estimate of H
+FGNAcf			Autocorrelation of FGN
+FGNLL			Loglikelihood of FGN
+FitFGN			MLE for H in FGN
+FitRegressionFGN	Fits Regression with FGN Error
+SimulateFGN		Simulate FGN Time Series
+
+		DATA
+NileFlowCMS		Average Annual Nile Riverflow, 1871-1945
+NileMin			Annual Nile Minima, 622 AD to 1284 AD
+
