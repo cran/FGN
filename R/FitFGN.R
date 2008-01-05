@@ -9,7 +9,7 @@ if (lag.max=="default")
 else
     MaxLag=lag.max
 MaxIter<-10
-indMeanQ <- demean || MeanMLE
+indMeanQ <- demean || MeanMLEQ
 if (indMeanQ)
     mz <- mean(z) 
 else
@@ -54,7 +54,7 @@ Rsq<-1-DLAcfToAR(rH2[-1])[-1+length(rH2),3]
 sigsq<-var(z)*(1-Rsq)
 ans<-list(loglikelihood=ans$loglikelihood, H=H, SEH=SEH, sigsqHat=sigsq,muHat=muHat,SEmu=SEmu, Rsq=Rsq,
           LjungBoxQ=LBQ,res=res,demean=demean, 
-          iterationCount=iter, convergence=ans$convergence, MeanMLE=MeanMLEQ, z=z, tsp=ztsp, call=match.call(),
+          iterationCount=iter, convergence=ans$convergence, MeanMLEQ=MeanMLEQ, z=z, tsp=ztsp, call=match.call(),
           DataTitle=attr(z,"title"))
 class(ans)<-"FitFGN"
 ans

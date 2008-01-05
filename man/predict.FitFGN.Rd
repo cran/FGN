@@ -6,7 +6,7 @@ The exact finite-sample minimum mean square error forecasts are computed
 using the Trench algorithm.
 }
 \usage{
-predict.FitFGN(object, n.ahead = 1, ...)
+\method{predict}{FitFGN}(object, n.ahead = 1, ...)
 }
 \arguments{
   \item{object}{ "FitFGN" object produced by FitFGN }

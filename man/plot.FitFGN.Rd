@@ -5,7 +5,7 @@
 Diagnostic plots of the residual autocorrelations and Ljung-Box test.
 }
 \usage{
-plot.FitFGN(x, maxLag=30, ...)
+\method{plot}{FitFGN}(x, maxLag=30, ...)
 }
 \arguments{
   \item{x}{ object of class "FitFGN" }

@@ -6,7 +6,7 @@ Simulate a realization from a fitted AR model. This is useful in the
 parametric bootstrap.  Generic function for "Boot" method.
 }
 \usage{
-Boot.FitFGN(obj, R = 1, ...)
+\method{Boot}{FitFGN}(obj, R = 1, ...)
 }
 \arguments{
   \item{obj}{ the output from FitAR }
