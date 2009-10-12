@@ -27,7 +27,7 @@ Journal of Statistical Software.
 
 \seealso{ 
 \code{\link{FitFGN}},
-\code{\link[LTSA]{DLLoglikelihood}} 
+\code{\link[ltsa]{DLLoglikelihood}} 
 }
 
 \examples{

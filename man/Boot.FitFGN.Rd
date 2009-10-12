@@ -33,8 +33,8 @@ Journal of Statistical Software.
 \author{ A.I. McLeod }
 \seealso{
 \code{\link{SimulateFGN}}, 
-\code{\link[LTSA]{DHSimulate}} 
-\code{\link[LTSA]{DLSimulate}} 
+\code{\link[ltsa]{DHSimulate}} 
+\code{\link[ltsa]{DLSimulate}} 
  }
 
 \examples{

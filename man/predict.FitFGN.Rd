@@ -31,8 +31,8 @@ Journal of Statistical Software.
 
 \seealso{ 
 \code{\link{FitFGN}},
-\code{\link[LTSA]{TrenchForecast}} 
-\code{\link[LTSA]{PredictionVariance}} 
+\code{\link[ltsa]{TrenchForecast}} 
+\code{\link[ltsa]{PredictionVariance}} 
 \code{\link{predict.Arima}} 
 }
 

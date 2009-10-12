@@ -32,7 +32,7 @@ Journal of Statistical Software.
 }
 
 \seealso{ 
-\code{\link[LTSA]{DLSimulate}} 
+\code{\link[ltsa]{DLSimulate}} 
 }
 \examples{
 #Example 1
