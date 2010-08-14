@@ -1,0 +1,25 @@
+imports("ltsa")
+
+export(
+"Boot.FitFGN",
+"Boot",
+"FGNAcf",
+"FGNLL",
+"FitFGN",
+"FitRegressionFGN",
+"GetFitFGN",
+"HurstK",
+"SimulateFGN",
+"coef.FitFGN",
+"plot.FitFGN",
+"predict.FitFGN",
+"print.FitFGN",
+"residuals.FitFGN",
+"summary.FitFGN")
+
+## methods 
+  S3method("coef", "FitFGN")
+  S3method("print", "FitFGN")
+  S3method("residuals", "FitFGN")
+  S3method("summary", "FitFGN")
+  S3method("plot", "FitFGN")

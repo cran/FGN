@@ -19,7 +19,7 @@
   archive -- file: Minimum. 
 }
 \source{
- Toussoun, O. (1925).
+Toussoun, O. (1925).
 Memoire sur l'Histoire du Nil.
 In Memoires a l'Institut d'Egypte, 18, 366-404.
 }

@@ -3,21 +3,25 @@
 \docType{package}
 
 \title{
-Estimate H parameter by MLE
+Fractional Gaussian Noise, estimation and simulaton
 }
 
 \description{
-Compute FGN's rank correlation and various trend tests.
+FGN (Fractional Gaussian Noise) model fitting, simulation, bootstrapping, 
+forecasting. Mininum Nile River flow, annual, 663 values, 622 AD to 1284 AD.
+Annual Nile river flow at Aswan, 1871-1945 from original source.
+ 
 }
 
 \details{
 \tabular{ll}{
 Package: \tab FGN\cr
 Type: \tab Package\cr
-Version: \tab 1.2\cr
-Date: \tab 2009-10-12\cr
+Version: \tab 1.3\cr
+Date: \tab 2010-08-14\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
+LazyData: \tab yes\cr
 }
 
 This package provides a comprehensive approach to fitting  FGN.
@@ -26,7 +30,7 @@ This package provides a comprehensive approach to fitting  FGN.
 
 
 \author{
-A. I. McLeod
+A. I. McLeod, Hao Yu and Zinovi Krougly.
 
 Maintainer: aimcleod@uwo.ca
 }
