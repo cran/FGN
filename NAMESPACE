@@ -1,4 +1,4 @@
-imports("ltsa")
+import("ltsa")
 
 export(
 "Boot.FitFGN",
