@@ -1,6 +1,6 @@
 Package: FGN
-Version: 1.4
-Date: 2010-11-30
+Version: 1.5
+Date: 2011-02-11
 Title: Fractional Gaussian Noise, estimation and simulaton
 Author: A.I. McLeod
 Maintainer: A.I. McLeod <aimcleod@uwo.ca>
@@ -15,6 +15,6 @@ LazyLoad: yes
 LazyData: yes
 License: GPL (>= 2)
 URL: http://www.stats.uwo.ca/faculty/aim
-Packaged: 2010-11-30 18:10:22 UTC; aim
+Packaged: 2011-02-11 21:28:00 UTC; aim
 Repository: CRAN
-Date/Publication: 2010-11-30 19:45:46
+Date/Publication: 2011-02-12 13:30:09

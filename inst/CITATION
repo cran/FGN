@@ -1,4 +1,4 @@
-citHeader("To cite FitAR in publications use:")
+citHeader("To cite FGN in publications use:")
 
 citEntry(entry = "Article",
   title        = "Algorithms for Linear Time Series Analysis: With R Package",
