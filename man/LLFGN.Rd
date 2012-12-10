@@ -1,12 +1,12 @@
-\name{FGNLL}
-\alias{FGNLL}
+\name{LLFGN}
+\alias{LLFGN}
 \title{ Concentrated Loglikelihood Function for H }
 \description{
 The concentrated loglikelihood, that is, the loglikelihood function
 maximized over the innovation variance parameter, is computed.
 }
 \usage{
-FGNLL(H, z)
+LLFGN(H, z)
 }
 \arguments{
   \item{H}{ parameter }
@@ -35,7 +35,7 @@ Journal of Statistical Software.
 data(NileFlowCMS)
 z<-NileFlowCMS
 z<-z-mean(z)
-FGNLL(0.9, z)
+LLFGN(0.9, z)
 
 
 #simulate Gaussian white noise and tabulate the loglikelihood for H=0.40, 0.45, 0.50, 0.55, 0.60
@@ -45,7 +45,7 @@ z<-rnorm(500, 100, 50)
 z<-z-mean(z)
 LL<-numeric(length(h))
 for (i in 1:length(h))
-	LL[i]<-FGNLL(h[i],z)
+	LL[i]<-LLFGN(h[i],z)
 matrix(c(h,LL),ncol=2)
 }
 \keyword{ ts }

@@ -11,7 +11,7 @@ function(X,y){
     etol<-10
     iter<-0
     while(iter<MaxIter&&etol>0.001){
-            r<-FGNAcf(0:(n-1),H0)
+            r<-acvfFGN(H0, n-1)
             Ginv<-TrenchInverse(toeplitz(r))
             XpGinv<-crossprod(X,Ginv)
             XpXinv<-solve(XpGinv%*%X)

@@ -11,22 +11,28 @@ This is a utility function used by \code{\link{FitFGN}} but
 it is also useful in simulation experiments since it is 
 faster than using \code{\link{FitFGN}}.
 See example below.
+In this model, alpha=2-2*H.
 }
 
 \usage{
-GetFitFGN(z, MeanZeroQ = FALSE)
+GetFitFGN(z, MeanZeroQ = FALSE, algorithm=c("emle", "wmle"), ciQ=FALSE)
 }
 
 \arguments{
   \item{z}{ time series data vector }
   \item{MeanZeroQ}{ optional argument, default is MeanZeroQ=FALSE. 
   Set to TRUE if the mean is known to be zero }
+  \item{algorithm}{"emle" or "wmle" for exact or Whittle mle}
+  \item{ciQ}{TRUE or FALSE according as 95 percent confidence interval computed and plotted}
 }
 
 \value{
-a list with two elements:
-  \item{Loglikelihood}{value of the maximized loglikelihood}
+a list with four/five elements:
   \item{H}{MLE for H}
+  \item{Loglikelihood}{value of the maximized loglikelihood}
+  \item{alpha}{MLE for alpha}
+  \item{algorithm}{either "emle" or "wmle"}
+  \item{ci}{95 percent confidence interval for H}
 }
 
 \references{ 

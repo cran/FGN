@@ -1,7 +1,7 @@
 `SimulateFGN` <-
 function(n, H){
     stopifnot( H>0, H<1, n>1)
-    r<-FGNAcf(0:(n-1), H)
+    r<-acvfFGN(H, n-1)
     if (n>=50 && H<0.84)
         z<-DHSimulate(n, r)
     else

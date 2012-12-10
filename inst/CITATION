@@ -1,20 +1,18 @@
 citHeader("To cite FGN in publications use:")
 
 citEntry(entry = "Article",
-  title        = "Algorithms for Linear Time Series Analysis: With R Package",
-  author       = personList(as.person("A. I. McLeod"),
-                   as.person("Hao Yu"),
-				   as.person("Zinovi Krougly")),
-  journal      = "Journal of Statistical Software",
-  year         = "2007",
-  volume       = "23",
-  number       = "5",
-  url          = "http://www.jstatsoft.org/v23/i05/",
+  title        = "Hyperbolic Decay Time Series Models",
+  author       = personList(
+                as.person("Justin Veenstra"),
+  		as.person("A. I. McLeod")
+		),
+  journal      = "In press",
+  year         = "2012",
+  volume       = " ",
+  number       = " ",
 
   textVersion  =
-  paste("A. I. McLeod, Hao Yu, Zinovi Krougly (2007).",
-        "Algorithms for Linear Time Series Analysis: With R Package",
-        "Journal of Statistical Software 23(5).",
-        "URL http://www.jstatsoft.org/v23/i05/.")
+  paste("Justin Veenstra, A. I. McLeod (2012).",
+  "Hyperbolic Decay Time Series Models")
 )
 

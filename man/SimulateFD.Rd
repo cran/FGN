@@ -1,20 +1,20 @@
-\name{SimulateFGN}
-\alias{SimulateFGN}
+\name{SimulateFD}
+\alias{SimulateFD}
 
-\title{ Simulates FGN }
+\title{ Simulates FD }
 \description{
 A fractional Gaussian noise time series is simulated.
 }
 \usage{
-SimulateFGN(n, H)
+SimulateFD(n, d)
 }
 
 \arguments{
   \item{n}{ length of time series}
-  \item{H}{ Hurst coefficient }
+  \item{d}{ fractional difference parameter }
 }
 \details{
-  The FFT is used so it is most efficient if you select n to be a power of 2.
+  The FFT is used so it is most efficient if you select n to be a power of 2. Note, d=H-1/2.
 }
 \value{
 vector of length containing the simulated time series
@@ -32,25 +32,14 @@ Journal of Statistical Software.
 }
 
 \seealso{ 
+\code{\link{SimulateFGN}},
 \code{\link[ltsa]{DLSimulate}} 
 }
 \examples{
 #Example 1
 #simulate a process with H=0.2 and plot it
-z<-SimulateFGN(100, 0.2)
+z<-SimulateFD(100, 0.2)
 ts.plot(z)
-# 
-#Example 2
-#simulate FGN and compare theoretical and sample autocovariances
-H<-0.7
-n<-8192
-z<-SimulateFGN(n, H)
-#autocovariances
-sacvf<-acf(z, plot=FALSE,type="covariance")$acf
-tacf<-acvfFGN(H, n-1)
-tb<-matrix(c(tacf[1:10],sacvf[1:10]),ncol=2)
-dimnames(tb)<-list(0:9, c("Tacvf","Sacvf"))
-tb
 }
 \keyword{ ts }
 \keyword{ datagen }

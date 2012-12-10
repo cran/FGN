@@ -34,12 +34,16 @@ Wavelet Methods for Time Series Analysis.
 Cambridge University Press.
 }
 \examples{
+#Example 1
 #Compute Hurst's K estimate of H
 data(NileMin)
 HurstK(NileMin)
+GetFitFGN(NileMin)
 
+#Example 2
 #Script for comparing FGN/ARMA forecast performance
 #
+\dontrun{
 data(NileMin)
 outNileMin<-FitFGN(NileMin)
 set.seed(12177)
@@ -55,7 +59,7 @@ n1<-length(z1)
 outz1<-FitFGN(z1)
 H<-outz1$H
 mu<-outz1$muHat
-rFGN<-var(z1)*FGNAcf(0:(n + maxLead -1), H)
+rFGN<-var(z1)*acvfFGN(H, n + maxLead -1)
 F<-TrenchForecast(c(z1,z2), rFGN, mu, n1, maxLead=maxLead)$Forecasts
 nF<-nrow(F)
 err1<-z2-F[,1][-nF]
@@ -89,6 +93,7 @@ ARMArmse<-c(rmse1,rmse2,rmse3)
 #tabulate result
 tb<-matrix(c(FGNrmse,ARMArmse),ncol=2)
 dimnames(tb)<-list(c("lead1","lead2","lead3"),c("FGN","ARMA"))
+}
 
 }
 \keyword{datasets}

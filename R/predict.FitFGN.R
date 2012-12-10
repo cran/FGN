@@ -4,7 +4,7 @@ function(object, n.ahead = 1, ...){
     n<-length(z)
     H<-object$H
     zm<-object$muHat
-    r<-var(z)*FGNAcf(0:(n+n.ahead-1), H)
+    r<-var(z)*acvfFGN(H, n+n.ahead-1)
     TrenchForecast(z,r,zm,n,maxLead=n.ahead)
 }
 

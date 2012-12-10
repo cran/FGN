@@ -42,6 +42,7 @@ Journal of Statistical Software.
 #Fit a FGN model and determine the bootstrap sd of H
 #Measure cpu time. With R=250, it takes about 23 sec 
 #on 3.6 GHz Pentium IV.
+\dontrun{
 data(NileMin)
 outNileMin<-FitFGN(NileMin)
 start<-proc.time()[1]
@@ -53,6 +54,7 @@ for (i in 1:R)
 BootSD<-sd(Hs) #this is the bootstrap sd
 end<-proc.time()[1]
 totTim<-end-start
+}
 }
 
 \keyword{ ts }

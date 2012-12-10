@@ -1,15 +1,18 @@
 import("ltsa")
 
 export(
+"acvfFGN", "acvfFD", "acvfPLA", "acvfPLS",
+"sdfFGN", "sdfFD", "sdfPLA", "sdfPLS",
+"LLFGN", "LLFD", "LLPLA", "LLPLS", 
+"GetFitFGN", "GetFitPLA", "GetFitFD", "GetFitPLS",
+"FitFGN",
+"Reimann",
 "Boot.FitFGN",
 "Boot",
-"FGNAcf",
-"FGNLL",
-"FitFGN",
 "FitRegressionFGN",
-"GetFitFGN",
 "HurstK",
 "SimulateFGN",
+"SimulateFD",
 "coef.FitFGN",
 "plot.FitFGN",
 "predict.FitFGN",

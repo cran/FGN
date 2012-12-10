@@ -23,7 +23,7 @@ if (MeanMLEQ)
     while(etol> 1e-06 && iter<MaxIter){
         LLPrev<-LL
         iter<-iter+1
-        r<-FGNAcf(0:(n-1), ans$H)
+        r<-acvfFGN(ans$H, n-1)
         mu<-TrenchMean(r, y)
         ans<-GetFitFGN(y-mu,MeanZeroQ=TRUE)
         LL<-ans$loglikelihood
@@ -34,7 +34,7 @@ if (MeanMLEQ)
 muHat<-mu+mz
 H<-ans$H
 SEH<-sqrt((c(0.13,0.24,0.31,0.37,0.40,0.43,0.45,0.47,0.47, 0.47)[max(1,round(10*H))])/n)
-rH<-var(z)*FGNAcf(0:(n-1), H)
+rH<-var(z)*acvfFGN(H, n-1)
 SEmu<-sqrt((rH[1]+2*sum(rH[-1]*(n-(1:(n-1))))/n)/n)
 res<-DLResiduals(rH, y)
 racf<-(acf(res, plot=FALSE, lag.max=MaxLag)$acf)[-1]
@@ -47,9 +47,9 @@ a<-matrix(c(lags,QQ,pv),ncol=3)
 dimnames(a)<-list(rep("",length(QQ)),c("m","Qm", "pvalue"))
 LBQ<-a
 if (H < 0.75)
-    rH2<-FGNAcf(0:10^3, H)
+    rH2<-acvfFGN(H, 10^3)
 else
-    rH2<-FGNAcf(0:10^4, H)
+    rH2<-acvfFGN(H, 10^4)
 Rsq<-1-DLAcfToAR(rH2[-1])[-1+length(rH2),3]
 sigsq<-var(z)*(1-Rsq)
 ans<-list(loglikelihood=ans$loglikelihood, H=H, SEH=SEH, sigsqHat=sigsq,muHat=muHat,SEmu=SEmu, Rsq=Rsq,

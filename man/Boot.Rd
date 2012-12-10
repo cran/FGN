@@ -28,9 +28,10 @@ Journal of Statistical Software.
 
 \seealso{ \code{\link{Boot.FitFGN}} }
 \examples{
+\dontrun{
 data(NileMin)
 out<-FitFGN(NileMin)
 Boot(out, R=3)
-
+}
 }
 \keyword{ ts }
