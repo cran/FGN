@@ -1,3 +1,5 @@
+useDynLib(FGN, shift_C, tacvfARMA_C, tacvfFDWN_C, tacfHD_C, tacfFGN_C)
+
 import("ltsa")
 
 export(
@@ -5,6 +7,8 @@ export(
 "sdfFGN", "sdfFD", "sdfPLA", "sdfPLS",
 "LLFGN", "LLFD", "LLPLA", "LLPLS", 
 "GetFitFGN", "GetFitPLA", "GetFitFD", "GetFitPLS",
+"sdfarma", "sdfhd", "warfima", "WLoglikelihood", "earfima",
+"InvertibleQ", "ARToPacf", "PacfToAR", "tacvfARFIMA",
 "FitFGN",
 "Reimann",
 "Boot.FitFGN",

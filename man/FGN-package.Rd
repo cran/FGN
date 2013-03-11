@@ -3,11 +3,11 @@
 \docType{package}
 
 \title{
-Fractional Gaussian Noise (FGN) and related simple long memory time series models
+Fractional Gaussian Noise and hyperbolic decay time series model fitting
 }
 
 \description{
-Exact and Whittle MLE for four simple time series models with hyperbolic decay.
+Exact and Whittle MLE for time series models with hyperbolic decay.
 Simulation and regression supported for FGN.
 }
 
@@ -15,9 +15,9 @@ Simulation and regression supported for FGN.
 	\tabular{ll}{
 	Package: \tab FGN\cr
 	Type: \tab Package\cr
-	Version: \tab 2.0-1\cr
-	Date: \tab 2012-12-10\cr
-	License: \tab GPL (>= 2)\cr
+	Version: \tab 2.0-4\cr
+	Date: \tab 2013-03-11\cr
+	License: \tab CC BY-NC-SA 3.0\cr
 	LazyLoad: \tab yes\cr
 	LazyData: \tab yes\cr
 	}

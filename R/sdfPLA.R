@@ -1,4 +1,5 @@
 sdfPLA <- function(a, n){
+if (abs(a-1) < 0.001) return(sdfFGN(0.5, n))
 stopifnot(a<2)
 stopifnot(n>2)
 lams<-c(1.,
