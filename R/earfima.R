@@ -47,5 +47,6 @@ earfima <- function(z, order=c(0,0,0), lmodel=c("FD", "FGN", "PLA", "NONE")) {
     HHat <- 1-alphaHat/2
     dHat <- HHat - 0.5
     phiHat <- thetaHat <- numeric(0)
-    list(bHat=bHat, alphaHat=alphaHat, HHat = HHat, dHat=dHat, phiHat=phiHat, thetaHat=thetaHat, LL=LL, convergence=convergence)
+    ans<-list(bHat=bHat, alphaHat=alphaHat, HHat = HHat, dHat=dHat, phiHat=phiHat, thetaHat=thetaHat, LL=LL, convergence=convergence)
+    unlist(ans)
 }
