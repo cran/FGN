@@ -4,7 +4,8 @@ earfima <- function(z, order=c(0,0,0), lmodel=c("FD", "FGN", "PLA", "NONE")) {
     d <- order[2]
     q <- order[3]
     stopifnot(p >= 0, q >= 0, d >= 0)
-    is.wholenumber <- function(x, tol = .Machine$double.eps^0.5)  abs(x - round(x)) < tol
+    is.wholenumber <- function(x, tol = .Machine$double.eps^0.5)
+          abs(x - round(x)) < tol
     stopifnot(is.wholenumber(p), is.wholenumber(d), is.wholenumber(q))
     w <- if(d>0) diff(z, differences=d) else z
     w <- w-mean(w)
@@ -25,15 +26,22 @@ earfima <- function(z, order=c(0,0,0), lmodel=c("FD", "FGN", "PLA", "NONE")) {
             FGN=tacvfARFIMA(phi = phi, theta = theta, H = 1-alpha/2, maxlag = n-1),
             PLA=tacvfARFIMA(phi = phi, theta = theta, alpha = alpha, maxlag = n-1),
             NONE=tacvfARFIMA(phi = phi, theta = theta, maxlag = n-1) )
-          LL <- -DLLoglikelihood(r, w)
+#needed in some cases, eg. NileMin with p=1, q=3, lmodel="FGN"
+          LL <- try(-DLLoglikelihood(r, w), silent=TRUE)
+          LL <- ifelse(is.numeric(LL), LL, -penaltyLoglikelihood)
           }
         LL
-        } 
-    if (p+q>0 || lmodel!="NONE") {       
-     ans<-optim(par=binit, fn=Entropy, p=p, q=q, method="L-BFGS-B", lower=c(0.01,rep(-0.99,p+q)), upper=c(1.99,rep(0.99,p+q)), control=list(trace=0))
+        }
+    if (p+q>0 || lmodel!="NONE") {
+     ans<-optim(par=binit, fn=Entropy, p=p, q=q, method="L-BFGS-B",
+        lower=c(0.01,rep(-0.99,p+q)), upper=c(1.99,rep(0.99,p+q)), control=list(trace=0))
      if(ans$convergence != 0) {#convergence problem. Use Nelder-Mead with penalty function
         alg<-2
-        ans<-optim(par=binit, fn=Entropy, method="Nelder-Mead")
+        ans<-optim(par=binit, fn=Entropy,  p=p, q=q, method="Nelder-Mead")
+        if(ans$convergence != 0) {#convergence problem. Use SANN with penalty function
+            alg<-3
+            ans<-optim(par=binit, fn=Entropy,  p=p, q=q, method="SANN")
+            }
      }
      bHat <- ans$par
      LL <- -ans$value
@@ -42,11 +50,11 @@ earfima <- function(z, order=c(0,0,0), lmodel=c("FD", "FGN", "PLA", "NONE")) {
      bHat <- numeric(0)
      LL <- -Entropy(1, 0, 0)
      convergence <- 0
-    } 
+    }
     alphaHat <- bHat[1]
     HHat <- 1-alphaHat/2
     dHat <- HHat - 0.5
     phiHat <- thetaHat <- numeric(0)
-    ans<-list(bHat=bHat, alphaHat=alphaHat, HHat = HHat, dHat=dHat, phiHat=phiHat, thetaHat=thetaHat, LL=LL, convergence=convergence)
-    unlist(ans)
+    list(bHat=bHat, alphaHat=alphaHat, HHat = HHat, dHat=dHat, phiHat=phiHat, thetaHat=thetaHat,
+       LL=LL, convergence=convergence, algorithm=alg)
 }

@@ -15,8 +15,8 @@ Simulation and regression supported for FGN.
 	\tabular{ll}{
 	Package: \tab FGN\cr
 	Type: \tab Package\cr
-	Version: \tab 2.0-5\cr
-	Date: \tab 2013-04-02\cr
+	Version: \tab 2.0-11\cr
+	Date: \tab 2013-04-11\cr
 	License: \tab CC BY-NC-SA 3.0\cr
 	LazyLoad: \tab yes\cr
 	LazyData: \tab yes\cr

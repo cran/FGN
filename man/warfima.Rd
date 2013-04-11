@@ -26,9 +26,9 @@ list with components:
 	\item{dHat}{estimate of d} 
         \item{phiHat}{estimate of phi} 
 	\item{thetaHat}{estimate of theta} 
-	\item{wLL}{optimized value of Whittle approximate log-likelihood} 
-        \item{LL}{corresponding exact log-likelihood}
+	\item{LL}{optimized value of Whittle approximate log-likelihood} 
 	\item{convergence}{convergence indicator}
+	\item{algorithm}{optimization algorithm used, 1 for L-BFGS-B, 2 for Nelder-Mead, 3 for SANN }
 }
 
 \author{

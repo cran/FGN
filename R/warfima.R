@@ -31,29 +31,26 @@ warfima <- function(z, order=c(0,0,0), lmodel=c("FD", "FGN", "PLA", "PLS", "NONE
      ans<-optim(par=binit, fn=Entropy, p=p, q=q, method="L-BFGS-B", lower=c(0.01,rep(-0.99,p+q)), upper=c(1.99,rep(0.99,p+q)), control=list(trace=0))
      if(ans$convergence != 0) {#convergence problem. Use Nelder-Mead with penalty function
         alg<-2
-        ans<-optim(par=binit, fn=Entropy, method="Nelder-Mead")
-        }
+        ans<-optim(par=binit, fn=Entropy,  p=p, q=q, method="Nelder-Mead")
+        if(ans$convergence != 0) {#convergence problem. Use SANN with penalty function
+            alg<-3
+            ans<-optim(par=binit, fn=Entropy,  p=p, q=q, method="SANN")
+            }
+     }
      bHat <- ans$par
      wLL <- -ans$value
      convergence <- ans$convergence
-    } else {
+    } else { #pure white noise
      bHat <- numeric(0)
      wLL <- -Entropy(1, 0, 0)
      convergence <- 0
-    } 
+    }
     alphaHat <- bHat[1]
     HHat <- 1-alphaHat/2
     dHat <- HHat - 0.5
     phiHat <- thetaHat <- numeric(0)
     if (p>0) phiHat <- PacfToAR(bHat[2:(p+1)])
     if (q>0) thetaHat <- PacfToAR(bHat[(2+p):(1+p+q)])
-    if (identical(lmodel,"PLS")) LL <- NA else {
-        r <- switch(lmodel, 
-            FD=tacvfARFIMA(phi = phiHat, theta = thetaHat, dfrac = dHat, maxlag = n-1),
-            FGN=tacvfARFIMA(phi = phiHat, theta = thetaHat, H = HHat, maxlag = n-1),
-            PLA=tacvfARFIMA(phi = phiHat, theta = thetaHat, alpha = alphaHat, maxlag = n-1),
-            NONE=tacvfARFIMA(phi = phiHat, theta = thetaHat, maxlag = n-1) )
-        LL <- DLLoglikelihood(r, w)
-    }        
-    list(bHat=bHat, alphaHat=alphaHat, HHat = HHat, dHat=dHat, phiHat=phiHat, thetaHat=thetaHat, wLL=wLL, LL=LL, convergence=convergence)
+    list(bHat=bHat, alphaHat=alphaHat, HHat = HHat, dHat=dHat, phiHat=phiHat, thetaHat=thetaHat,
+        LL=wLL, convergence=convergence, algorithm=alg)
 }
