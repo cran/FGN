@@ -1,3 +1,11 @@
+CHANGES IN 'FGN' VERSION 2.0-12 (2014-03-04)
+    o    fixed problem detected by valgrind, line 47 in tacvf.c 
+    o    imports ltsa, akima
+    o    fixed long lines in Rd files
+ CHANGES IN 'FGN' VERSION 2-13 (2013-04-17)
+    o    code improvements to earfima and warfima
+    o    tacvfhd included
+    o    vignettes for diagnostic checking FGN and PLA
 CHANGES IN 'FGN' VERSION 2.0-5 (2013-04-02)
     o    improved compatibility with FitAR and arfima 
 CHANGES IN 'FGN' VERSION 2.0-3 (2013-03-11)

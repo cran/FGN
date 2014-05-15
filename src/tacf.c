@@ -44,7 +44,7 @@ void tacfFGN_C(double *H, int *maxlag, double *x) {
 	int i;
 	int ml = (int)(*maxlag);
 	double h2 = (double)(*H)*2;
-	double temp[ml+1];
+	double temp[ml+2];
 	x[0] = 1;
 	if(ml > 1) {
 		temp[0] = 0;

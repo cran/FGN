@@ -1,6 +1,6 @@
-cb28d1eb38c894db9cbd77f2cdf19066 *DESCRIPTION
-e3c595c2cf411596b4abfdce4bfcd789 *NAMESPACE
-bbdf261659630d1896b67be196486ea5 *NEWS
+ce38c7cd37f55af73920cdccf04681f0 *DESCRIPTION
+6a8a4607027bd84cbcea6a0d595173ea *NAMESPACE
+862e90b040f3dcc4682e33000feeb281 *NEWS
 b834c996deb14ac0ba270e839cdd415f *R/ARToPacf.R
 cfb49e32b1bbe8aaf7d5c8a33cf46d6b *R/Boot.FitFGN.R
 e870fb2bd451cd03745e026240c577f2 *R/Boot.R
@@ -60,7 +60,7 @@ edf2ad5de4ea660c8d1b29ddecea419b *inst/doc/v23i05_table12.R
 13b2384fdf9804d4dca40935bc63fa5c *inst/doc/v23i05_table15b.R
 1c5073d9dd8bd443197ede3c5992054e *man/Boot.FitFGN.Rd
 a7e4c5cc4ef2b7bc69dceaa1f58fd093 *man/Boot.Rd
-69e88a25ed0bda5d7eee9eb01830cbdb *man/FGN-package.Rd
+762b1517e93bff6af4559b9b8ed0b83b *man/FGN-package.Rd
 c8243c44bd59fe7fba70f5ee744b44a2 *man/FitFGN.Rd
 65911d58148bbd61c8fa880550cae4e7 *man/FitRegressionFGN.Rd
 7af77ce4d328fbec6bcd37f5050b56b4 *man/GetFitFD.Rd
@@ -78,7 +78,6 @@ a7c72172395a8bd84c79249d8a06716d *man/LLPLS.Rd
 fc4bdba6e71a77174263d5a7ffd84479 *man/SeriesB.Rd
 453866911e9ba763331d9ac6039f789d *man/SimulateFD.Rd
 22a83d1503940bbe3495642531d808bb *man/SimulateFGN.Rd
-e3278c2d3c708788dbebf3797fec010a *man/WLoglikelihood.Rd
 7e680dbfc2c844bdb0215bf835edeb30 *man/acvfFD.Rd
 2f1de394855b3a0c5197096340b063f7 *man/acvfFGN.Rd
 4d8cb860dcaaf47d73f6a8251a10f927 *man/acvfPLA.Rd
@@ -95,8 +94,8 @@ e687cc9c8e11a577839eebb76c49efd0 *man/predict.FitFGN.Rd
 ccc078af00486b96516cb780b272fe97 *man/sdfPLA.Rd
 0dfe505b306b1e1cbd3ec2e94189a72c *man/sdfPLS.Rd
 a191b29ed46da52184fe8834c468b148 *man/sdfarma.Rd
-de3398fa8395c7024850c4975d5cf6cd *man/sdfhd.Rd
+2e5fe260270ee7a54384727b23d1d846 *man/sdfhd.Rd
 880cbcefc7461be5ccedbeb931ad1b29 *man/summary.FitFGN.Rd
 b1c51f3faa74346daf29cfe89f7d7cee *man/warfima.Rd
 d9cf118d94dfc5a2d09eeb47b1b7320b *src/Makevars
-0e0aca6610678156d51c2c44163b498c *src/tacf.c
+4e1a53545f0efa7a399bc94331dc6e2c *src/tacf.c

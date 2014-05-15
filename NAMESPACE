@@ -1,14 +1,15 @@
 useDynLib(FGN, shift_C, tacvfARMA_C, tacvfFDWN_C, tacfHD_C, tacfFGN_C)
 
 import("ltsa")
+import("akima")
 
 export(
 "acvfFGN", "acvfFD", "acvfPLA", "acvfPLS",
 "sdfFGN", "sdfFD", "sdfPLA", "sdfPLS",
 "LLFGN", "LLFD", "LLPLA", "LLPLS", 
 "GetFitFGN", "GetFitPLA", "GetFitFD", "GetFitPLS",
-"sdfarma", "sdfhd", "warfima", "WLoglikelihood",
-"earfima",  
+"sdfarma", "sdfhd", "warfima",
+"earfima", 
 "FitFGN",
 "Reimann",
 "Boot.FitFGN",
